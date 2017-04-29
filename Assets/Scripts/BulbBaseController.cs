@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class BulbBaseController : Interactable {
     public override void Interact(GameObject player) {
-        Transform bulb = player.transform.FindChild("Lightbulb");
-        if (bulb != null) {
+        PlayerItemHandling playerController = player.GetComponent<PlayerItemHandling>();
+        if (playerController.heldItemType == ItemType.Lightbulb) {
+            Transform bulb = playerController.heldItem.transform;
             bulb.parent = transform;
             bulb.localPosition = new Vector2(0, -1f);
             SpriteRenderer sprite = bulb.gameObject.GetComponent<SpriteRenderer>();
             sprite.sortingLayerName = "Background Item";
             glow.SetActive(false);
+            playerController.heldItemType = ItemType.None;
         }
     }
 
     override public bool CanInteract(GameObject player) {
-        return player.transform.FindChild("Lightbulb") != null;
+        PlayerItemHandling playerController = player.GetComponent<PlayerItemHandling>();
+        return playerController.heldItemType == ItemType.Lightbulb;
     }
 }

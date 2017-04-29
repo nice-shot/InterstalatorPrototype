@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ItemType {
+    None,
+    Lightbulb,
+    Tape
+}
+
 public class PlayerItemHandling : MonoBehaviour {
+    public ItemType heldItemType;
+    public GameObject heldItem;
     private Interactable closestInteractable;
 
 	// Use this for initialization
 	void Start () {
-		
+        heldItemType = ItemType.None;
 	}
 	
 	// Update is called once per frame

@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glow: {fileID: 1640318665597534}
+  type: 1
 --- !u!212 &212099688860269852
 SpriteRenderer:
   m_ObjectHideFlags: 1
