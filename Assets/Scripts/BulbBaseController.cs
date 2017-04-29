@@ -13,6 +13,7 @@ public class BulbBaseController : Interactable {
             sprite.sortingLayerName = "Background Item";
             glow.SetActive(false);
             playerController.heldItemType = ItemType.None;
+            playerController.heldItem = null;
         }
     }
 
