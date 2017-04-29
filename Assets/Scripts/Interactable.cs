@@ -12,7 +12,7 @@ public abstract class Interactable : MonoBehaviour {
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        if (other.tag == "Player" && CanInteract(other.gameObject)) {
+        if (other.tag == "Player") {
             glow.SetActive(false);
         }
     }
