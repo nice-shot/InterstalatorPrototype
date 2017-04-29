@@ -8,6 +8,9 @@ public class BulbBaseController : Interactable {
         if (bulb != null) {
             bulb.parent = transform;
             bulb.localPosition = new Vector2(0, -1f);
+            SpriteRenderer sprite = bulb.gameObject.GetComponent<SpriteRenderer>();
+            sprite.sortingLayerName = "Background Item";
+            glow.SetActive(false);
         }
     }
 
