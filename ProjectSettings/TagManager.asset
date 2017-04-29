@@ -38,14 +38,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
+  - name: Background Image
     uniqueID: 2826052587
     locked: 0
   - name: Background Item
     uniqueID: 3013126779
     locked: 0
+  - name: Interactable Item
+    uniqueID: 2942907313
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 1498887825
     locked: 0
   - name: Forground
     uniqueID: 708310407
