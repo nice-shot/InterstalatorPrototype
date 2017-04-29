@@ -14,7 +14,7 @@ public class BulbBaseController : Interactable {
         }
     }
 
-    override protected bool CanInteract(GameObject player) {
+    override public bool CanInteract(GameObject player) {
         return player.transform.FindChild("Lightbulb") != null;
     }
 }

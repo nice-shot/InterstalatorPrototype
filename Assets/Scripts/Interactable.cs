@@ -19,7 +19,7 @@ public abstract class Interactable : MonoBehaviour {
 
     abstract public void Interact(GameObject player);
 
-    virtual protected bool CanInteract(GameObject player) {
+    virtual public bool CanInteract(GameObject player) {
         return true;
     }
 }

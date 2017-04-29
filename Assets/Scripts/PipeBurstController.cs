@@ -26,7 +26,7 @@ public class PipeBurstController : Interactable {
 		isCovered = !isCovered;
     }
 
-    protected override bool CanInteract(GameObject player) {
+    override public bool CanInteract(GameObject player) {
 		bool playerHasTape = player.transform.FindChild("Ducktape") != null;
 		bool connectedToElectricityGenerator = (lightManager == null);
 		return 

@@ -21,7 +21,7 @@ public class PlayerItemHandling : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other) {
         Interactable otherInter = other.GetComponent<Interactable>();
-        if (otherInter != null) {
+        if (otherInter != null && otherInter.CanInteract(gameObject)) {
             closestInteractable = otherInter;
         }
     }
