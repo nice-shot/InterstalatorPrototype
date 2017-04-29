@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BulbBaseController : Interactable {
     public override void Interact(GameObject player) {
-        if (player.transform.FindChild("Lightbulb")) {
-            Debug.Log("GotLight!");
+        Transform bulb = player.transform.FindChild("Lightbulb");
+        if (bulb != null) {
+            bulb.parent = transform;
+            bulb.localPosition = new Vector2(0, -1f);
         }
     }
 
