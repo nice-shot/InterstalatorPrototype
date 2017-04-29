@@ -2,27 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulbBaseController : MonoBehaviour {
-    public GameObject glowEffect;
-
-    // Use this for initialization
-    void Start() {
-    }
-	
-    // Update is called once per frame
-    void Update() {
-		
-    }
-
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Player") {
-            glowEffect.SetActive(true);
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other) {
-        if (other.tag == "Player") {
-            glowEffect.SetActive(false);
+public class BulbBaseController : Interactable {
+    public override void Interact(GameObject player) {
+        if (player.transform.FindChild("Lightbulb")) {
+            Debug.Log("GotLight!");
         }
     }
 

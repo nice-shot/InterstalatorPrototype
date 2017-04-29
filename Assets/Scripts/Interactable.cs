@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour {
+public abstract class Interactable : MonoBehaviour {
     public GameObject glow;
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -16,4 +16,6 @@ public class Interactable : MonoBehaviour {
             glow.SetActive(false);
         }
     }
+
+    abstract public void Interact(GameObject player);
 }
