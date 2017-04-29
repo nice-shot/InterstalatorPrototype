@@ -11,6 +11,9 @@ public class BulbBaseController : Interactable {
         }
     }
 
+    protected override bool CanInteract(GameObject player) {
+        return player.transform.FindChild("Lightbulb") != null;
+    }
 //    void OnTriggerStay2D(Collider2D other) {
 //        Debug.Log("Player in me!");
 //    }

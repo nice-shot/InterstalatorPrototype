@@ -6,16 +6,20 @@ public abstract class Interactable : MonoBehaviour {
     public GameObject glow;
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Player") {
+        if (other.tag == "Player" && CanInteract(other.gameObject)) {
             glow.SetActive(true);
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        if (other.tag == "Player") {
+        if (other.tag == "Player" && CanInteract(other.gameObject)) {
             glow.SetActive(false);
         }
     }
 
     abstract public void Interact(GameObject player);
+
+    virtual protected bool CanInteract(GameObject player) {
+        return true;
+    }
 }
