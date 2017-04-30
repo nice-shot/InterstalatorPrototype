@@ -29,6 +29,16 @@ public class PlayerController : MonoBehaviour {
                 closestInteractable.Interact(this);
             }
         }
+
+        // Drop off current item
+        if (Input.GetButtonDown("Fire2") == true && heldItem != null) {
+            heldItem.transform.SetParent(null);
+            Vector3 pos = heldItem.transform.position;
+            pos.y = -heldItem.spriteSize;
+
+            heldItem.transform.position = pos;
+            heldItem = null;
+        }
     }
 
     // Set closest interactable once we're in range

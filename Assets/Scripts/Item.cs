@@ -9,6 +9,7 @@ public enum ItemType {
 
 public class Item : Interactable {
     public ItemType type;
+    public float spriteSize = 1;
 
     public override void Interact(PlayerController player) {
         // Place the item graphic at the center of the player
