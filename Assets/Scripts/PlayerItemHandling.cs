@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ItemType {
-    None,
-    Lightbulb,
-    Tape
-}
+
 
 public class PlayerItemHandling : MonoBehaviour {
     public ItemType heldItemType;

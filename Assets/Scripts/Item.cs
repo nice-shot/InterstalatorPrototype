@@ -2,22 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ItemType {
+    Lightbulb,
+    Tape
+}
+
 public class Item : Interactable {
     public ItemType type;
 
-    public override void Interact(GameObject player) {
+    public override void Interact(PlayerController player) {
+        // Place the item graphic at the center of the player
         transform.parent = player.transform;
         transform.localPosition = new Vector2(0, 0);
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
         sprite.sortingLayerName = "Forground";
 
-        PlayerItemHandling playerController = player.GetComponent<PlayerItemHandling>();
-        playerController.heldItemType = type;
-        playerController.heldItem = gameObject;
+        // Add this item to the player logic
+        player.heldItem = this;
     }
 
-    public override bool CanInteract(GameObject player) {
-        PlayerItemHandling playerController = player.GetComponent<PlayerItemHandling>();
-        return playerController.heldItemType == ItemType.None;
+    public override bool CanInteract(PlayerController player) {
+        // By default items can only be interactable if the player doesn't hold any
+        return player.heldItem == null;
     }
 }
