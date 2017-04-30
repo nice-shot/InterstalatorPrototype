@@ -7,18 +7,23 @@ public abstract class Interactable : MonoBehaviour {
 
     void Start() {
         if (glow == null) {
-            glow = transform.Find("Glow");
+            Transform glowSearch = transform.FindChild("Glow");
+            if (glowSearch != null) {
+                glow = glowSearch.gameObject;
+            }
         }
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Player" && CanInteract(other.gameObject)) {
+        PlayerController player = other.GetComponent<PlayerController>();
+        if (player != null && CanInteract(player)) {
             glow.SetActive(true);
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        if (other.tag == "Player") {
+        PlayerController player = other.GetComponent<PlayerController>();
+        if (player != null) {
             glow.SetActive(false);
         }
     }

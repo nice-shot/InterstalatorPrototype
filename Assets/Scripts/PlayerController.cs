@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Set closest interactable once we're in range
-    void OnTriggerEnter2D(Collider other) {
+    void OnTriggerEnter2D(Collider2D other) {
         Interactable otherInter = other.GetComponent<Interactable>();
         if (otherInter != null && otherInter.CanInteract(this)) {
             closestInteractable = otherInter;
