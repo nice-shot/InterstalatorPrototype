@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulbBaseController : Interactable {
+    private bool hasBulb = false;
+
     public override void Interact(GameObject player) {
         PlayerItemHandling playerController = player.GetComponent<PlayerItemHandling>();
         if (playerController.heldItemType == ItemType.Lightbulb) {
@@ -14,11 +16,12 @@ public class BulbBaseController : Interactable {
             glow.SetActive(false);
             playerController.heldItemType = ItemType.None;
             playerController.heldItem = null;
+            hasBulb = true;
         }
     }
 
     override public bool CanInteract(GameObject player) {
         PlayerItemHandling playerController = player.GetComponent<PlayerItemHandling>();
-        return playerController.heldItemType == ItemType.Lightbulb;
+        return playerController.heldItemType == ItemType.Lightbulb && !hasBulb;
     }
 }
