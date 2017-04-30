@@ -15,7 +15,7 @@ public class PipeBurstController : Interactable {
 		sr = GetComponent<SpriteRenderer> ();
 	}
 
-    public override void Interact(GameObject player) {
+    public override void Interact(PlayerController player) {
 		if (isCovered) {
 			sr.sprite = leaking;
 			lightManager.Water = totalWater - leakingWater;
@@ -26,8 +26,8 @@ public class PipeBurstController : Interactable {
 		isCovered = !isCovered;
     }
 
-    override public bool CanInteract(GameObject player) {
-		bool playerHasTape = player.transform.FindChild("Ducktape") != null;
+    override public bool CanInteract(PlayerController player) {
+        bool playerHasTape = player.heldItem != null && player.heldItem.type == ItemType.Tape;
 		bool connectedToElectricityGenerator = (lightManager == null);
 		return 
 			(!isCovered && playerHasTape && connectedToElectricityGenerator) || 
