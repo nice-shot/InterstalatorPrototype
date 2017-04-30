@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4438679258681492}
   - component: {fileID: 212408203435348796}
   m_Layer: 0
-  m_Name: LightbulbGlow
+  m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,8 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07b787a7226e54da8878ece13cd462b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glow: {fileID: 1640318665597534}
-  type: 1
+  glow: {fileID: 0}
+  type: 0
+  spriteSize: 1
 --- !u!212 &212099688860269852
 SpriteRenderer:
   m_ObjectHideFlags: 1
