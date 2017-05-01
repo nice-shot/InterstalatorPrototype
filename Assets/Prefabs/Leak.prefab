@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glow: {fileID: 0}
+  textBox: {fileID: 0}
 --- !u!212 &212370865465164168
 SpriteRenderer:
   m_ObjectHideFlags: 1
