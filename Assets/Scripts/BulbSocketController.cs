@@ -3,8 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulbSocketController : Interactable {
+    const float VOLT_TO_INTENSITY = 0.0125f;
+    const float MAX_INTENSITY = 1f;
+
     private bool hasBulb = false;
     private TextMesh textBox;
+
+    private float intensity;
+    private float _incomingVolt;
+    public float incomingVolt {
+        get {
+            return _incomingVolt;
+        }
+        set {
+            _incomingVolt = value;
+            intensity = _incomingVolt * VOLT_TO_INTENSITY;
+            if (intensity > MAX_INTENSITY) {
+                intensity = 0;
+            }
+            UpdateText();
+        }
+    }
 
     new protected void Start() {
         base.Start();
@@ -27,10 +46,18 @@ public class BulbSocketController : Interactable {
         hasBulb = true;
 
         // Set text
-        textBox.text = "Light: 20%";
+        UpdateText();
     }
 
     override public bool CanInteract(PlayerController player) {
         return player.heldItem != null && player.heldItem.type == ItemType.Lightbulb && !hasBulb;
+    }
+
+    private void UpdateText() {
+        if (hasBulb) {
+            textBox.text = "Light Intensity: " + intensity;
+        } else {
+            textBox.text = "Empty Socket";
+        }
     }
 }
