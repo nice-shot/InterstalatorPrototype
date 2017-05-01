@@ -35,8 +35,10 @@ public class PlayerController : MonoBehaviour {
             heldItem.transform.SetParent(null);
             Vector3 pos = heldItem.transform.position;
             pos.y = -heldItem.spriteSize;
-
             heldItem.transform.position = pos;
+            SpriteRenderer sprite = heldItem.GetComponent<SpriteRenderer>();
+            sprite.sortingLayerName = "Interactable Item";
+
             heldItem = null;
         }
     }
