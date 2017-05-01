@@ -22,7 +22,7 @@ public class LeakController : Interactable {
         }
     }
 
-    protected void Start() {
+    new protected void Start() {
         base.Start();
         textBox = transform.GetComponentInChildren<TextMesh>();
     }
