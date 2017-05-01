@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4582724993399942}
   - component: {fileID: 212280150526765082}
   m_Layer: 0
-  m_Name: BulbGlow
+  m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,10 +94,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1463640855489930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f037d6fef0f4449e8483106c3138b2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1986c61c99a154ed7823d282b139f89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glow: {fileID: 1239896615452024}
+  glow: {fileID: 0}
 --- !u!212 &212280150526765082
 SpriteRenderer:
   m_ObjectHideFlags: 1
