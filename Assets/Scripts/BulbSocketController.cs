@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulbSocketController : Interactable {
+    public enum BulbState { None, Active, Broken };
+
     const float VOLT_TO_INTENSITY = 0.0125f;
     const float MAX_INTENSITY = 1f;
 
     public ElectricityGeneratorController generator;
 
-    public bool hasBulb = false;
+    public BulbState bulbState = BulbState.None;
+    public bool hasBulb { get { return bulbState == BulbState.Active; } }
 
     private TextMesh textBox;
 
@@ -28,6 +31,7 @@ public class BulbSocketController : Interactable {
             intensity = _incomingVolt * VOLT_TO_INTENSITY;
             if (intensity > MAX_INTENSITY) {
                 intensity = 0;
+                bulbState = BulbState.Broken;
             }
             UpdateText();
         }
@@ -51,7 +55,7 @@ public class BulbSocketController : Interactable {
 
         // Remove the bulb from the player's logic and add to mine
         player.heldItem = null;
-        hasBulb = true;
+        bulbState = BulbState.Active;
 
         // Make the generator update changes. Should probably be some kind of event
         generator.updateDistribution();
@@ -66,10 +70,16 @@ public class BulbSocketController : Interactable {
 
     // Print how strong the light is - should be changed to some special graphic stuff
     private void UpdateText() {
-        if (hasBulb) {
-            textBox.text = "Light Intensity: " + (int)(intensity*100) + "%";
-        } else {
+        switch (bulbState) {
+        case BulbState.None:
             textBox.text = "Empty Socket";
+            break;
+        case BulbState.Broken:
+            textBox.text = "Light Broken";
+            break;
+        default:
+            textBox.text = "Light Intensity: " + (int)(intensity * 100) + "%";
+            break;
         }
     }
 }
