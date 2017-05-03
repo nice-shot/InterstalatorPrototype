@@ -7,6 +7,10 @@ public class ElectricityGeneratorController : MonoBehaviour {
     private const float WATER_TO_VOLT = 1f;
 
     private float _incomingWater = 60f;
+    /// <summary>
+    /// Gets or sets the incoming water. Set also updates the distribution.
+    /// </summary>
+    /// <value>The incoming water.</value>
     public float incomingWater {
         get { return _incomingWater; }
         set {
@@ -19,6 +23,9 @@ public class ElectricityGeneratorController : MonoBehaviour {
         updateDistribution();
     }
 
+    /// <summary>
+    /// Distributes the generated electricity across the lights
+    /// </summary>
     public void updateDistribution() {
         BulbSocketController[] sockets = lightsContainer.GetComponentsInChildren<BulbSocketController>();
         int activeSockets = 0;

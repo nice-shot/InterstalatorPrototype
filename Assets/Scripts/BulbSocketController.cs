@@ -14,6 +14,11 @@ public class BulbSocketController : Interactable {
 
     private float intensity;
     private float _incomingVolt;
+    /// <summary>
+    /// Gets or sets the incoming volt. The set operation also updates the light's intensity
+    /// and prints it.
+    /// </summary>
+    /// <value>The incoming volt.</value>
     public float incomingVolt {
         get {
             return _incomingVolt;
@@ -48,7 +53,7 @@ public class BulbSocketController : Interactable {
         player.heldItem = null;
         hasBulb = true;
 
-        // Make the generator update changes
+        // Make the generator update changes. Should probably be some kind of event
         generator.updateDistribution();
 
         // Set text - Not necessary since updateDistribution does this
@@ -59,6 +64,7 @@ public class BulbSocketController : Interactable {
         return player.heldItem != null && player.heldItem.type == ItemType.Lightbulb && !hasBulb;
     }
 
+    // Print how strong the light is - should be changed to some special graphic stuff
     private void UpdateText() {
         if (hasBulb) {
             textBox.text = "Light Intensity: " + (int)(intensity*100) + "%";
