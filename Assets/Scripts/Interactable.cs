@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Interactable : MonoBehaviour {
     public GameObject glow;
 
-    protected void Start() {
+    protected void Awake() {
         if (glow == null) {
             Transform glowSearch = transform.FindChild("Glow");
             if (glowSearch != null) {

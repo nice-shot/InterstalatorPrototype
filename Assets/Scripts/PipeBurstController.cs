@@ -11,7 +11,8 @@ public class PipeBurstController : Interactable {
 	public float totalWater = 100f; 
 	public float leakingWater = 80f;
 
-	void Awake(){
+    new protected void Awake(){
+        base.Awake();
 		sr = GetComponent<SpriteRenderer> ();
 	}
 

@@ -22,8 +22,8 @@ public class LeakController : Interactable {
         }
     }
 
-    new protected void Start() {
-        base.Start();
+    new protected void Awake() {
+        base.Awake();
         textBox = transform.GetComponentInChildren<TextMesh>();
     }
 
