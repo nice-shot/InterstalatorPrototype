@@ -29,8 +29,7 @@ public class BulbSocketController : Interactable {
         set {
             _incomingVolt = value;
             intensity = _incomingVolt * VOLT_TO_INTENSITY;
-            if (intensity > MAX_INTENSITY) {
-                intensity = 0;
+            if (intensity > MAX_INTENSITY && bulbState == BulbState.Active) {
                 bulbState = BulbState.Broken;
             }
             UpdateText();
