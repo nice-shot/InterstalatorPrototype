@@ -6,7 +6,7 @@ public class ElectricityGeneratorController : MonoBehaviour {
     public GameObject lightsContainer;
     private const float WATER_TO_VOLT = 1f;
 
-    private float _incomingWater = 80f;
+    private float _incomingWater = 60f;
     public float incomingWater {
         get { return _incomingWater; }
         set {

@@ -61,7 +61,7 @@ public class BulbSocketController : Interactable {
 
     private void UpdateText() {
         if (hasBulb) {
-            textBox.text = "Light Intensity: " + intensity;
+            textBox.text = "Light Intensity: " + (int)(intensity*100) + "%";
         } else {
             textBox.text = "Empty Socket";
         }
