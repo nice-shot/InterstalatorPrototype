@@ -6,7 +6,10 @@ public class BulbSocketController : Interactable {
     const float VOLT_TO_INTENSITY = 0.0125f;
     const float MAX_INTENSITY = 1f;
 
-    private bool hasBulb = false;
+    public ElectricityGeneratorController generator;
+
+    public bool hasBulb = false;
+
     private TextMesh textBox;
 
     private float intensity;
@@ -45,8 +48,11 @@ public class BulbSocketController : Interactable {
         player.heldItem = null;
         hasBulb = true;
 
-        // Set text
-        UpdateText();
+        // Make the generator update changes
+        generator.updateDistribution();
+
+        // Set text - Not necessary since updateDistribution does this
+        //UpdateText();
     }
 
     override public bool CanInteract(PlayerController player) {

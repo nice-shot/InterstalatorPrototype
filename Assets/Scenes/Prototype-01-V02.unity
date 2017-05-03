@@ -142,6 +142,11 @@ Prefab:
       propertyPath: m_Name
       value: BulbBase (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114907555175295884, guid: c33fec8b7137049ec9d6bb8a34e8bf1d,
+        type: 2}
+      propertyPath: generator
+      value: 
+      objectReference: {fileID: 1532077061}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c33fec8b7137049ec9d6bb8a34e8bf1d, type: 2}
   m_IsPrefabParent: 0
@@ -266,6 +271,11 @@ Prefab:
       propertyPath: m_Name
       value: BulbBase (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 114907555175295884, guid: c33fec8b7137049ec9d6bb8a34e8bf1d,
+        type: 2}
+      propertyPath: generator
+      value: 
+      objectReference: {fileID: 1532077061}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c33fec8b7137049ec9d6bb8a34e8bf1d, type: 2}
   m_IsPrefabParent: 0
@@ -325,6 +335,11 @@ Prefab:
       propertyPath: m_Name
       value: BulbBase (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114907555175295884, guid: c33fec8b7137049ec9d6bb8a34e8bf1d,
+        type: 2}
+      propertyPath: generator
+      value: 
+      objectReference: {fileID: 1532077061}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c33fec8b7137049ec9d6bb8a34e8bf1d, type: 2}
   m_IsPrefabParent: 0
@@ -721,6 +736,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114907555175295884, guid: c33fec8b7137049ec9d6bb8a34e8bf1d,
+        type: 2}
+      propertyPath: generator
+      value: 
+      objectReference: {fileID: 1532077061}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c33fec8b7137049ec9d6bb8a34e8bf1d, type: 2}
   m_IsPrefabParent: 0
@@ -822,6 +842,11 @@ Prefab:
       propertyPath: m_Name
       value: BulbBase (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114907555175295884, guid: c33fec8b7137049ec9d6bb8a34e8bf1d,
+        type: 2}
+      propertyPath: generator
+      value: 
+      objectReference: {fileID: 1532077061}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c33fec8b7137049ec9d6bb8a34e8bf1d, type: 2}
   m_IsPrefabParent: 0
@@ -839,6 +864,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1532077060}
   - component: {fileID: 1532077059}
+  - component: {fileID: 1532077061}
   m_Layer: 8
   m_Name: ElectrictiyGenerator
   m_TagString: Untagged
@@ -894,6 +920,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1532077061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1532077058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f90f96a365d64476a8473cba96713d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightsContainer: {fileID: 563410587}
 --- !u!4 &1629755967 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4954090318239636, guid: 2f94197e765b14cf38930a3f0e2a3a38,
