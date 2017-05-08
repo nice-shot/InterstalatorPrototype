@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ZeroGravityItem : Item {
-    private GameObject mainItem;
+    public GameObject mainItem;
+
     void Start() {
         mainItem = transform.parent.gameObject;
     }
@@ -17,7 +18,9 @@ public class ZeroGravityItem : Item {
 
         // Deactivate the rigidbody
         Rigidbody2D body = mainItem.GetComponent<Rigidbody2D>();
-        body.Sleep();
+        body.simulated = false;
+        BoxCollider2D collider = mainItem.GetComponent<BoxCollider2D>();
+        collider.isTrigger = true;
 
         // Add this item to the player logic
         player.heldItem = this;

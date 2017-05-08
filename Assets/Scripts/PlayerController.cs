@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    protected void DropItem() {
+    virtual protected void DropItem() {
         heldItem.transform.SetParent(null);
         Vector3 pos = heldItem.transform.position;
         pos.y = -heldItem.spriteSize;
