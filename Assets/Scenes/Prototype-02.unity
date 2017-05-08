@@ -247,6 +247,11 @@ SpriteRenderer:
   m_Color: {r: 0.6764706, g: 0.95983773, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!50 &1472530017 stripped
+Rigidbody2D:
+  m_PrefabParentObject: {fileID: 50603274432784202, guid: 70ccb0ff5e6b64faea09857e76d89226,
+    type: 2}
+  m_PrefabInternal: {fileID: 1771381270}
 --- !u!1001 &1677476569
 Prefab:
   m_ObjectHideFlags: 0
@@ -409,6 +414,7 @@ MonoBehaviour:
   glow: {fileID: 0}
   bodysWithGravity:
   - {fileID: 740181170}
+  - {fileID: 1472530017}
 --- !u!212 &1851508743
 SpriteRenderer:
   m_ObjectHideFlags: 0
