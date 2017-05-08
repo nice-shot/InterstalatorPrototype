@@ -7,21 +7,18 @@ public class PlayerController : MonoBehaviour {
     public Item heldItem;
     public float moveSpeed = 240f;
 
-    private Rigidbody2D body;
+    protected Rigidbody2D body;
     private Interactable closestInteractable;
 
-    void Start() {
+    virtual protected void Start() {
         body = GetComponent<Rigidbody2D>();
     }
 
     // Handle movement and interaction input
-    void Update() {
+    virtual protected void Update() {
 
         // Movement
-        Vector2 velocity = body.velocity;
-        float movement = Input.GetAxis("Horizontal");
-        velocity.x = movement * Time.deltaTime * moveSpeed;
-        body.velocity = velocity;
+        HandleMovement();
 
         // Interaction
         if (Input.GetButtonDown("Fire1") == true) {
@@ -61,5 +58,12 @@ public class PlayerController : MonoBehaviour {
         sprite.sortingLayerName = "Interactable Item";
 
         heldItem = null;
+    }
+
+    virtual protected void HandleMovement() {
+        Vector2 velocity = body.velocity;
+        float movement = Input.GetAxis("Horizontal");
+        velocity.x = movement * Time.deltaTime * moveSpeed;
+        body.velocity = velocity;
     }
 }
