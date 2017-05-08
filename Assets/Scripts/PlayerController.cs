@@ -6,12 +6,20 @@ public class PlayerController : MonoBehaviour {
 
     public Item heldItem;
     public float moveSpeed = 240f;
+	private float currSpeed = 0f;
+	private Animator animator = null;
+	private int animatorSpeed = 0;
+	private SpriteRenderer sr; 
 
     protected Rigidbody2D body;
     private Interactable closestInteractable;
 
+
     virtual protected void Start() {
         body = GetComponent<Rigidbody2D>();
+		animator = GetComponent<Animator> ();
+		animatorSpeed = Animator.StringToHash ("speed");
+		sr = GetComponent<SpriteRenderer> ();
     }
 
     // Handle movement and interaction input
@@ -65,5 +73,8 @@ public class PlayerController : MonoBehaviour {
         float movement = Input.GetAxis("Horizontal");
         velocity.x = movement * Time.deltaTime * moveSpeed;
         body.velocity = velocity;
+		currSpeed = velocity.x;
+		animator.SetFloat (animatorSpeed, velocity.x);
+		sr.flipX = (currSpeed > 0.01f);
     }
 }

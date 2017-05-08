@@ -7,6 +7,8 @@ public class LeakController : Interactable {
     public TextMesh textBox;
     public ElectricityGeneratorController generator;
 
+	private Animator animator;
+	private int animatorIsCoveredId;
     private const float PRESSURE_CHANGE = 20f;
     private bool _isSealed = false;
     private bool isSealed {
@@ -29,10 +31,13 @@ public class LeakController : Interactable {
     new protected void Awake() {
         base.Awake();
         textBox = transform.GetComponentInChildren<TextMesh>();
+		animator = GetComponent<Animator> ();
+		animatorIsCoveredId = Animator.StringToHash ("isCovered");
     }
 
     public override void Interact(PlayerController player) {
         isSealed = !isSealed;
+		animator.SetBool (animatorIsCoveredId, isSealed);
         // Remove glow if the player can't stick it again
         if (player.heldItem == null) {
             glow.SetActive(false);

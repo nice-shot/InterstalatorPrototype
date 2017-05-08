@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c3a0bd2c0d8353145ad677a517b9e698
-timeCreated: 1494274110
+timeCreated: 1494283550
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -94,10 +94,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 77
-        height: 126
+        width: 184.6
+        height: 183
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -105,12 +105,12 @@ TextureImporter:
       name: Leak_1
       rect:
         serializedVersion: 2
-        x: 118
+        x: 184
         y: 0
-        width: 88
-        height: 126
+        width: 184.6
+        height: 183
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -118,12 +118,12 @@ TextureImporter:
       name: Leak_2
       rect:
         serializedVersion: 2
-        x: 239
+        x: 368
         y: 0
-        width: 126
-        height: 126
+        width: 184.6
+        height: 183
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -131,12 +131,12 @@ TextureImporter:
       name: Leak_3
       rect:
         serializedVersion: 2
-        x: 366
+        x: 552
         y: 0
-        width: 147
-        height: 126
+        width: 184.6
+        height: 183
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -144,12 +144,12 @@ TextureImporter:
       name: Leak_4
       rect:
         serializedVersion: 2
-        x: 508
+        x: 736
         y: 0
-        width: 122
-        height: 126
+        width: 184.6
+        height: 183
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -157,12 +157,12 @@ TextureImporter:
       name: Leak_5
       rect:
         serializedVersion: 2
-        x: 635
+        x: 920
         y: 0
-        width: 98
-        height: 126
+        width: 184.6
+        height: 183
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -170,12 +170,12 @@ TextureImporter:
       name: Leak_6
       rect:
         serializedVersion: 2
-        x: 762
+        x: 1104
         y: 0
-        width: 111
-        height: 126
+        width: 184.6
+        height: 183
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -183,12 +183,12 @@ TextureImporter:
       name: Leak_7
       rect:
         serializedVersion: 2
-        x: 896
+        x: 1288
         y: 0
-        width: 101
-        height: 126
+        width: 184.6
+        height: 183
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -196,12 +196,12 @@ TextureImporter:
       name: Leak_8
       rect:
         serializedVersion: 2
-        x: 1016
+        x: 1472
         y: 0
-        width: 106
-        height: 126
+        width: 184.6
+        height: 183
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -209,25 +209,12 @@ TextureImporter:
       name: Leak_9
       rect:
         serializedVersion: 2
-        x: 1160
+        x: 1656
         y: 0
-        width: 79
-        height: 126
+        width: 184.6
+        height: 183
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Leak_10
-      rect:
-        serializedVersion: 2
-        x: 1254
-        y: 0
-        width: 143
-        height: 126
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
