@@ -605,19 +605,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1480513016201684, guid: f58ee8c98cdaf497fa20a3c3cf96127f,
     type: 2}
   m_PrefabInternal: {fileID: 1207949657}
---- !u!114 &845052781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 845052780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc111f2239192479395a472d562d031a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
-  moveSpeed: 240
 --- !u!1001 &940624802
 Prefab:
   m_ObjectHideFlags: 0
@@ -754,12 +741,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1480513016201684, guid: f58ee8c98cdaf497fa20a3c3cf96127f, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114294194615302142, guid: f58ee8c98cdaf497fa20a3c3cf96127f, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f58ee8c98cdaf497fa20a3c3cf96127f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1431234254
