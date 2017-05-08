@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControllerZeroG : PlayerController {
+    public float zeroGSpeed = 10;
     private bool isZeroG;
 
     override protected void Start() {
@@ -24,7 +25,11 @@ public class PlayerControllerZeroG : PlayerController {
             base.HandleMovement();
             return;
         }
-        Debug.Log("Trying to move in 0 G");
+
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        body.AddForce(new Vector2(horizontal * zeroGSpeed, vertical * zeroGSpeed));
+        body.AddTorque(-horizontal);
     }
 
     override protected void DropItem() {
@@ -44,6 +49,7 @@ public class PlayerControllerZeroG : PlayerController {
 
     private void ChangedToZeroG() {
         if (!isZeroG) {
+            body.rotation = 0;
             return;
         }
         // Reduce velocity to avoid flying to the other side
