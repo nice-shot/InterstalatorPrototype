@@ -38,6 +38,8 @@ GameObject:
   - component: {fileID: 212784816545580118}
   - component: {fileID: 61011637258708714}
   - component: {fileID: 114153909864398552}
+  - component: {fileID: 50737185517343412}
+  - component: {fileID: 114734323413581932}
   m_Layer: 0
   m_Name: Lightbulb
   m_TagString: Untagged
@@ -52,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1626116871846976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.95, y: 2.16, z: 0}
+  m_LocalPosition: {x: -2.66, y: 1.14, z: 0}
   m_LocalScale: {x: 0.81614345, y: 0.81614345, z: 0.81614345}
   m_Children:
   - {fileID: 4399679349034390}
@@ -72,6 +74,26 @@ Transform:
   m_Father: {fileID: 4144810068582134}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50737185517343412
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1626116871846976}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0.05
+  m_AngularDrag: 0.1
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 0b2fbe2b7837e4b28bfc017276b5bc04, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61011637258708714
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -80,8 +102,8 @@ BoxCollider2D:
   m_GameObject: {fileID: 1626116871846976}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_Material: {fileID: 6200000, guid: 0b2fbe2b7837e4b28bfc017276b5bc04, type: 2}
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -100,6 +122,17 @@ MonoBehaviour:
   glow: {fileID: 0}
   type: 0
   spriteSize: 1
+--- !u!114 &114734323413581932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1626116871846976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549840b09df574f42a837f763d183d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212069172975643614
 SpriteRenderer:
   m_ObjectHideFlags: 1
