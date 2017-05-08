@@ -32,14 +32,7 @@ public class PlayerController : MonoBehaviour {
 
         // Drop off current item
         if (Input.GetButtonDown("Fire2") == true && heldItem != null) {
-            heldItem.transform.SetParent(null);
-            Vector3 pos = heldItem.transform.position;
-            pos.y = -heldItem.spriteSize;
-            heldItem.transform.position = pos;
-            SpriteRenderer sprite = heldItem.GetComponent<SpriteRenderer>();
-            sprite.sortingLayerName = "Interactable Item";
-
-            heldItem = null;
+            DropItem();
         }
     }
 
@@ -57,5 +50,16 @@ public class PlayerController : MonoBehaviour {
         if (otherInter != null) {
             closestInteractable = null;
         }
+    }
+
+    protected void DropItem() {
+        heldItem.transform.SetParent(null);
+        Vector3 pos = heldItem.transform.position;
+        pos.y = -heldItem.spriteSize;
+        heldItem.transform.position = pos;
+        SpriteRenderer sprite = heldItem.GetComponent<SpriteRenderer>();
+        sprite.sortingLayerName = "Interactable Item";
+
+        heldItem = null;
     }
 }
