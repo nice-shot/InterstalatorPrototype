@@ -74,7 +74,9 @@ public class PlayerController : MonoBehaviour {
         velocity.x = movement * Time.deltaTime * moveSpeed;
         body.velocity = velocity;
 		currSpeed = velocity.x;
-		animator.SetFloat (animatorSpeed, velocity.x);
+		if (animator != null) {
+			animator.SetFloat (animatorSpeed, velocity.x);
+		}
 		sr.flipX = (currSpeed > 0.01f);
     }
 }
