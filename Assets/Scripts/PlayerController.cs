@@ -9,7 +9,15 @@ public class PlayerController : MonoBehaviour {
 	private float currSpeed = 0f;
 	private Animator animator = null;
 	private int animatorSpeed = 0;
-	private SpriteRenderer sr; 
+	private SpriteRenderer sr;
+
+    // Easier property for setting facing direction
+    private bool facingRight {
+        get { return sr.flipX; }
+        set {
+            sr.flipX = value;
+        }
+    }
 
     protected Rigidbody2D body;
     private Interactable closestInteractable;
@@ -77,6 +85,10 @@ public class PlayerController : MonoBehaviour {
 		if (animator != null) {
 			animator.SetFloat (animatorSpeed, velocity.x);
 		}
-		sr.flipX = (currSpeed > 0.01f);
+
+        // Change sprite direction
+        if (movement != 0) {
+            facingRight = movement > 0;
+        }
     }
 }
