@@ -703,11 +703,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114753185985341488, guid: d4dd9a1c1573147f6abc433766f8bd16,
-        type: 2}
-      propertyPath: bodysWithGravity.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4695557116608648, guid: d4dd9a1c1573147f6abc433766f8bd16, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.95
