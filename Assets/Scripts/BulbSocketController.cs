@@ -5,8 +5,8 @@ using UnityEngine;
 public class BulbSocketController : Interactable {
     public enum BulbState { None, Active, Broken };
 
-    const float VOLT_TO_INTENSITY = 0.0125f;
-    const float MAX_INTENSITY = 1f;
+    const float VOLT_TO_INTENSITY = 1f;
+    const float MAX_INTENSITY = 2.05f;
 
     public ElectricityGeneratorController generator;
 
@@ -14,6 +14,7 @@ public class BulbSocketController : Interactable {
     public bool hasBulb { get { return bulbState == BulbState.Active; } }
 
     private TextMesh textBox;
+	private Light _light = null; 
 
     private float intensity;
     private float _incomingVolt;
@@ -32,6 +33,12 @@ public class BulbSocketController : Interactable {
             if (intensity > MAX_INTENSITY && bulbState == BulbState.Active) {
                 bulbState = BulbState.Broken;
             }
+			_light = GetComponentInChildren<Light> ();
+			if (_light != null && bulbState == BulbState.Active) {
+				_light.intensity = intensity;
+			} else if(_light != null && bulbState == BulbState.Broken){
+				_light.intensity = 0f;
+			}
             UpdateText();
         }
     }
@@ -45,7 +52,7 @@ public class BulbSocketController : Interactable {
         // Take bulb sprite from player and place on me
         Transform bulb = player.heldItem.transform;
         bulb.parent = transform;
-        bulb.localPosition = new Vector2(0, -1f);
+        bulb.localPosition = new Vector2(0, -0.56f);
         SpriteRenderer sprite = bulb.gameObject.GetComponent<SpriteRenderer>();
         sprite.sortingLayerName = "Background Item";
 
@@ -77,7 +84,7 @@ public class BulbSocketController : Interactable {
             textBox.text = "Light Broken";
             break;
         default:
-            textBox.text = "Light Intensity: " + (int)(intensity * 100) + "%";
+            textBox.text = "Light Intensity: " + (int)(intensity * 50) + "%";
             break;
         }
     }

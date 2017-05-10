@@ -9,7 +9,7 @@ public class LeakController : Interactable {
 
 	private Animator animator;
 	private int animatorIsCoveredId;
-    private const float PRESSURE_CHANGE = 20f;
+    private const float PRESSURE_CHANGE = 12f;
     private bool _isSealed = false;
     private bool isSealed {
         get {
